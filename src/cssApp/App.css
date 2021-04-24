@@ -8,14 +8,16 @@
     max-width: 1160px;
 }
 
+.App {
+    background-color: rgb(229, 236, 235);
+}
+
 
 
 
 
 
 .network {
-    background-color: rgb(233, 233, 233);
-    height: 95vh;
     padding-top: 2vh;
 }
 

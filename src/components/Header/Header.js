@@ -1,6 +1,6 @@
 import React from 'react';
-import vk from './../img/vk.jpg';
-import './../css/Header.css';
+import vk from './img/vk.jpg';
+import './Header.css';
 
 
 function Header() {

@@ -3,7 +3,7 @@ header {
 }
 
 .header__cont {
-    height: 5vh;
+    height: 6vh;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -11,6 +11,6 @@ header {
 
 .header__cont-img {
     height: 100%;
-    max-height: 37px;
+    max-height: 32px;
     padding-left: 12px;
 }

@@ -1,0 +1,31 @@
+.information {
+    width: 70%;
+}
+
+.information-name {
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.item p {
+    width: 30%;
+    color: rgb(117, 117, 117);
+    font-size: 15px;
+}
+
+.item-a {
+    width: 70%;
+    color: rgb(1, 80, 133);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.item-a:hover {
+    text-decoration: underline;
+}
