@@ -7,6 +7,7 @@ function Photo() {
     return (
         <div className={profilePhoto.Photo}>
             <img src={profile} alt="" />
+            <a href="#">Редактировать</a>
         </div>
     );
 }

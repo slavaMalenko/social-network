@@ -1,11 +1,22 @@
 .information {
-    width: 70%;
+    width: 73%;
+    padding: 0 20px;
 }
 
 .information-name {
-    font-size: 27px;
-    font-weight: 600;
-    margin-bottom: 30px;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.information-status {
+    margin-bottom: 15px;
+}
+
+.hr {
+    height: 1px;
+    width: 100%;
+    background-color: rgb(229, 236, 235);
+    margin-bottom: 15px;
 }
 
 .item {
@@ -13,16 +24,18 @@
     margin-bottom: 12px;
 }
 
+.item--bottom {
+    margin-bottom: 14px;
+}
+
 .item p {
     width: 30%;
     color: rgb(117, 117, 117);
-    font-size: 15px;
 }
 
 .item-a {
     width: 70%;
     color: rgb(1, 80, 133);
-    font-size: 15px;
     text-decoration: none;
 }
 

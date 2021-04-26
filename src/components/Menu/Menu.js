@@ -26,6 +26,7 @@ function Menu() {
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={music} alt="" />Музыка</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={videos} alt="" />Видео</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={games} alt="" />Игры</a></li>
+                <div className={menu.hr}></div>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={bookmarks} alt="" />Закладки</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={files} alt="" />Файлы</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={advertising} alt="" />Реклама</a></li>

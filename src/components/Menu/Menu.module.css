@@ -11,8 +11,15 @@
     transition: all .2s linear;
 }
 
+.hr {
+    height: 1px;
+    width: 70%;
+    background-color: rgb(173, 173, 173);
+    margin: 15px;
+}
+
 .item:hover {
-    background-color: rgb(225, 232, 245);
+    background-color: rgba(225, 227, 231, 0.877);
 }
 
 .item:hover .menu-img {
@@ -25,8 +32,8 @@
     align-items: center;
     text-decoration: none;
     color: #000;
-    font-size: 16px;
-    line-height: 40px;
+    font-size: 14px;
+    line-height: 37px;
 }
 
 .menu-img {
