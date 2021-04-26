@@ -1,0 +1,49 @@
+.post {
+    padding: 15px 20px;
+    display: flex;
+}
+
+.a {
+    width: 5%;
+}
+
+.post__img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.form {
+    width: 95%;
+    padding: 10px 10px 0 10px;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border: none;
+}
+
+.hr {
+    height: 1px;
+    width: 100%;
+    background-color: rgb(229, 236, 235);
+    margin:  5px 0 15px 0;
+}
+
+.submit {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 25px;
+    background-color: #5181b8;
+    color: #fff;
+}
+
+.submit:hover {
+    background-color: #5181b8d7;
+}

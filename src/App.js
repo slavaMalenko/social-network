@@ -1,28 +1,34 @@
+import { BrowserRouter, Route } from 'react-router-dom';
 import './cssApp/reset.css';
 import './cssApp/App.css';
 import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
-import Content from './components/Content/Content';
+import ContentProfile from './components/ContentProfile/ContentProfile';
+import ContentMessenger from './components/ContentMessenger/ContentMessenger';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
 
-      <Header />
+        <Header />
 
-      <div className="network">
-        <div className="container">
-          <div className="network__sections">
+        <div className="network">
+          <div className="container">
+            <div className="network__sections">
+              <Menu />
 
-            <Menu />
-
-            <Content />
-
+              <div className="network__content">
+                <Route path="/profile" component={ContentProfile} />
+                <Route path="/messenger" component={ContentMessenger} />
+                {/* <ContentProfile /> */}
+                {/* <ContentMessenger /> */}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </BrowserRouter>
   );
 }
 

@@ -2,20 +2,20 @@ header {
     background-color: #fff;
 }
 
-.header__cont {
+.content {
     height: 6vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header__cont-img {
+.img {
     height: 100%;
     max-height: 32px;
     padding-left: 10px;
 }
 
-.header__cont__exit {
+.exit {
     height: 100%;
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@ header {
     color: rgb(1, 80, 133);
 }
 
-.header__cont__exit img {
+.exit img {
     width: 10px;
     margin: 0 0 0 10px;
 }

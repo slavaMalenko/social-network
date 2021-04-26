@@ -17,9 +17,9 @@ function Menu() {
     return (
         <div className={menu.menu}>
             <ul>
-                <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={profile} alt="" />Моя страница</a></li>
+                <li className={menu.item}><a href="/profile"><img className={menu['menu-img']} src={profile} alt="" />Моя страница</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={news} alt="" />Новости</a></li>
-                <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={messages} alt="" />Мессенджер</a></li>
+                <li className={menu.item}><a href="/messenger"><img className={menu['menu-img']} src={messages} alt="" />Мессенджер</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={friends} alt="" />Друзья</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={community} alt="" />Сообщества</a></li>
                 <li className={menu.item}><a href="#"><img className={menu['menu-img']} src={photos} alt="" />Фотографии</a></li>

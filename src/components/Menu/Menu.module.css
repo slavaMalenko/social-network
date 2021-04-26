@@ -22,11 +22,6 @@
     background-color: rgba(225, 227, 231, 0.877);
 }
 
-.item:hover .menu-img {
-    margin-right: 20px;
-    transform: scale(1.15);
-}
-
 .item a {
     display: flex;
     align-items: center;
