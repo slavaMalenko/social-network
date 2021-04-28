@@ -7,6 +7,10 @@
 
     display: flex;
     align-items: center;
+
+    text-decoration: none;
+    color: #000;
+    outline: none !important;
 }
 
 .content:hover {

@@ -5,13 +5,19 @@ import NewPost from './Profile/Post/NewPost/NewPost';
 import ProfileInformation from './Profile/ProfileInformation/ProfileInformation';
 
 function ContentProfile() {
+
+    const postData = [
+        { message: "Сегодня я освоил архетиктуру реакта" },
+        { message: "Привет, сегодня я начинаю учить реакт" }
+    ]
+
     return (
         <div className={ContentProfileCss.content}>
             <ProfileInformation />
 
             <NewPost />
-            <MyPost message="Сегодня я освоил архетиктуру реакта" />
-            <MyPost message="Привет, сегодня я начинаю учить реакт" />
+            <MyPost message={postData[0].message} />
+            <MyPost message={postData[1].message} />
         </div>
     );
 }

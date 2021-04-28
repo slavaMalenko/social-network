@@ -22,13 +22,19 @@
     background-color: rgba(225, 227, 231, 0.877);
 }
 
-.item a {
+.item:hover .menu-img {
+    transform: scale(1.1);
+    margin-right: 15px;
+}
+
+.NavLink {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #000;
     font-size: 14px;
     line-height: 37px;
+    outline: none !important;
 }
 
 .menu-img {

@@ -21,8 +21,6 @@ function App() {
               <div className="network__content">
                 <Route path="/profile" component={ContentProfile} />
                 <Route path="/messenger" component={ContentMessenger} />
-                {/* <ContentProfile /> */}
-                {/* <ContentMessenger /> */}
               </div>
             </div>
           </div>
