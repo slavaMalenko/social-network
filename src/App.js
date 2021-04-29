@@ -6,7 +6,14 @@ import Menu from './components/Menu/Menu';
 import ContentProfile from './components/ContentProfile/ContentProfile';
 import ContentMessenger from './components/ContentMessenger/ContentMessenger';
 
-function App() {
+
+function App(props) {
+
+  const ProfileComponent = () => <ContentProfile state={props.state.profilePage} />;
+  const MessengerComponent = () => <ContentMessenger state={props.state.messengerPage} />;
+
+  debugger;
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -19,8 +26,8 @@ function App() {
               <Menu />
 
               <div className="network__content">
-                <Route path="/profile" component={ContentProfile} />
-                <Route path="/messenger" component={ContentMessenger} />
+                <Route path="/profile" component={ProfileComponent} />
+                <Route path="/messenger" component={MessengerComponent} />
               </div>
             </div>
           </div>

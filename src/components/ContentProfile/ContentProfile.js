@@ -4,22 +4,22 @@ import MyPost from './Profile/Post/MyPost/MyPost';
 import NewPost from './Profile/Post/NewPost/NewPost';
 import ProfileInformation from './Profile/ProfileInformation/ProfileInformation';
 
-function ContentProfile() {
+function ContentProfile(props) {
 
-    const postData = [
-        { message: "Сегодня я освоил архетиктуру реакта" },
-        { message: "Привет, сегодня я начинаю учить реакт" }
-    ]
+    const postsElements = props.state.postData
+        .map(post => <MyPost message={post.message} />)
 
     return (
         <div className={ContentProfileCss.content}>
             <ProfileInformation />
 
+
             <NewPost />
-            <MyPost message={postData[0].message} />
-            <MyPost message={postData[1].message} />
+
+            {postsElements}
         </div>
     );
+
 }
 
 export default ContentProfile;
