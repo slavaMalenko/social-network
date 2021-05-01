@@ -1,9 +1,11 @@
+import { rerenderEntireTree } from './../render'
+
 const state = {
 
     profilePage: {
         postData: [
-            { message: "Сегодня я освоил архетиктуру реакта" },
-            { message: "Привет, сегодня я начинаю учить реакт" }
+            { id: 2, message: "Привет, сегодня я начинаю учить реакт" },
+            { id: 1, message: "Сегодня я освоил архетиктуру реакта" },
         ],
     },
 
@@ -17,6 +19,14 @@ const state = {
         ],
     }
 
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        message: postMessage
+    };
+    state.profilePage.postData.push(newPost);
+    rerenderEntireTree(state);
 }
 
 export default state;

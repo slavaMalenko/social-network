@@ -5,11 +5,12 @@ import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import ContentProfile from './components/ContentProfile/ContentProfile';
 import ContentMessenger from './components/ContentMessenger/ContentMessenger';
+import { addPost } from './redux/state';
 
 
 function App(props) {
 
-  const ProfileComponent = () => <ContentProfile state={props.state.profilePage} />;
+  const ProfileComponent = () => <ContentProfile state={props.state.profilePage} addPost={props.addPost} />;
   const MessengerComponent = () => <ContentMessenger state={props.state.messengerPage} />;
 
   debugger;

@@ -1,6 +1,7 @@
 .post {
     padding: 15px 20px;
     display: flex;
+    text-decoration: none;
 }
 
 .a {
@@ -27,4 +28,8 @@
 
 .content a:hover {
     text-decoration: underline;
+}
+
+.text {
+    color: #000;
 }
