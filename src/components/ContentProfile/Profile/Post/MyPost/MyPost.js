@@ -10,7 +10,9 @@ function MyPost(props) {
     return (
         <NavLink to={path} className={MyPostCss.post}>
             <a className={MyPostCss.a} href="#">
-                <img className={MyPostCss.post__img} src={profile} />
+                <img
+                    className={MyPostCss.post__img}
+                    src={profile} />
             </a>
 
             <div className={MyPostCss.content}>

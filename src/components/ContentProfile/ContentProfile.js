@@ -7,14 +7,20 @@ import ProfileInformation from './Profile/ProfileInformation/ProfileInformation'
 function ContentProfile(props) {
 
     const postsElements = props.state.postData
-        .map(post => <MyPost message={post.message} id={post.id} />).reverse()
+        .map(post => <MyPost
+            message={post.message}
+            id={post.id} />).reverse()
 
     return (
         <div className={ContentProfileCss.content}>
             <ProfileInformation />
 
 
-            <NewPost addPost={props.addPost} />
+            <NewPost
+                addPost={props.addPost}
+                newPostText={props.state.newPostText}
+                updateNewPostText={props.updateNewPostText}
+            />
 
             {postsElements}
         </div>

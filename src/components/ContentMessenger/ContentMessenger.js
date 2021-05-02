@@ -5,7 +5,10 @@ import Dialogue from './Dialogue/Dialogue';
 function ContentMessenger(props) {
 
     const dialoguesElements = props.state.dialoguesData
-        .map(dialog => <Dialogue id={dialog.id} name={dialog.name} message={dialog.message} />)
+        .map(dialog => <Dialogue
+            id={dialog.id}
+            name={dialog.name}
+            message={dialog.message} />)
 
     return (
         <div className={ContentMessengerCss.content}>

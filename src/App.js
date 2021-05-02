@@ -5,16 +5,9 @@ import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import ContentProfile from './components/ContentProfile/ContentProfile';
 import ContentMessenger from './components/ContentMessenger/ContentMessenger';
-import { addPost } from './redux/state';
 
 
 function App(props) {
-
-  const ProfileComponent = () => <ContentProfile state={props.state.profilePage} addPost={props.addPost} />;
-  const MessengerComponent = () => <ContentMessenger state={props.state.messengerPage} />;
-
-  debugger;
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -27,8 +20,15 @@ function App(props) {
               <Menu />
 
               <div className="network__content">
-                <Route path="/profile" component={ProfileComponent} />
-                <Route path="/messenger" component={MessengerComponent} />
+                <Route path="/profile" render={() => <ContentProfile
+                  state={props.state.profilePage}
+                  addPost={props.addPost}
+                  updateNewPostText={props.updateNewPostText} />}
+                />
+
+                <Route path="/messenger" render={() => <ContentMessenger
+                  state={props.state.messengerPage} />}
+                />
               </div>
             </div>
           </div>

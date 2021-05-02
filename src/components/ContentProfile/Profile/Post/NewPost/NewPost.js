@@ -7,20 +7,38 @@ function NewPost(props) {
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        props.addPost();
+    }
+
+    let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.addPost(text);
+        props.updateNewPostText(text);
     }
 
     return (
         <div className={PostCss.post}>
             <a className={PostCss.a} href="#">
-                <img className={PostCss.post__img} src={profile} />
+                <img
+                    className={PostCss.post__img}
+                    src={profile} />
             </a>
 
             <div className={PostCss.form}>
-                <textarea ref={newPostElement} className={PostCss.text} type="text" placeholder="Что у вас нового?"></textarea>
+                <textarea
+                    onChange={onPostChange}
+                    ref={newPostElement}
+                    className={PostCss.text}
+                    value={props.newPostText}
+                    placeholder="Что у вас нового?"
+                />
+
                 <div className={PostCss.hr}></div>
-                <button onClick={addPost} className={PostCss.submit} >Опубликовать</button>
+
+                <button
+                    onClick={addPost}
+                    className={PostCss.submit}>
+                    Опубликовать
+                </button>
             </div>
         </div >
     );

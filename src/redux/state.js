@@ -1,12 +1,15 @@
 import { rerenderEntireTree } from './../render'
 
+let numberOfPosts = 2;
+
 const state = {
 
     profilePage: {
         postData: [
-            { id: 2, message: "Привет, сегодня я начинаю учить реакт" },
-            { id: 1, message: "Сегодня я освоил архетиктуру реакта" },
+            { id: 1, message: "Привет, сегодня я начинаю учить реакт" },
+            { id: 2, message: "Сегодня я освоил архетиктуру реакта" },
         ],
+        newPostText: ''
     },
 
     messengerPage: {
@@ -21,11 +24,26 @@ const state = {
 
 }
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export let addPost = () => {
+
+    let numberOfPost = numberOfPosts + 1;
+
+    numberOfPosts += 1;
+
     let newPost = {
-        message: postMessage
+        id: numberOfPost,
+        message: state.profilePage.newPostText
     };
+
     state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText = ''
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
 
