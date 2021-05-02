@@ -17,10 +17,8 @@ function ContentProfile(props) {
 
 
             <NewPost
-                addPost={props.addPost}
-                newPostText={props.state.newPostText}
-                updateNewPostText={props.updateNewPostText}
-            />
+                dispatch={props.dispatch}
+                newPostText={props.state.newPostText} />
 
             {postsElements}
         </div>

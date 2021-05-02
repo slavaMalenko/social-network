@@ -17,6 +17,7 @@
 
 .content {
     padding-left: 10px;
+    width: 95%;
 }
 
 .content a {
@@ -32,4 +33,5 @@
 
 .text {
     color: #000;
+    word-wrap: break-word;
 }

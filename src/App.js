@@ -22,8 +22,7 @@ function App(props) {
               <div className="network__content">
                 <Route path="/profile" render={() => <ContentProfile
                   state={props.state.profilePage}
-                  addPost={props.addPost}
-                  updateNewPostText={props.updateNewPostText} />}
+                  dispatch={props.dispatch} />}
                 />
 
                 <Route path="/messenger" render={() => <ContentMessenger
