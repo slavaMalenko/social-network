@@ -2,6 +2,7 @@
     padding: 15px 20px;
     display: flex;
     text-decoration: none;
+    outline: none !important;
 }
 
 .a {

@@ -1,27 +1,19 @@
 import React from 'react';
 import PostCss from './NewPost.module.css'
 import profile from './../../ProfileInformation/Photo/img/profile__img.jpg'
+import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../../../redux/state'
 
 function NewPost(props) {
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        let action = {
-            type: 'ADD-POST'
-        }
-
-        props.dispatch(action);
+        props.dispatch(addPostActionCreator());
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-
-        let action = {
-            type: 'UPDATE-NEW-POST-TEXT',
-            newText: text
-        }
-
+        let action = updateNewPostTextActionCreator(text);
         props.dispatch(action);
     }
 
