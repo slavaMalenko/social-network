@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './cssApp/reset.css';
 import './cssApp/App.css';
 import Header from './components/Header/Header';
@@ -9,31 +9,29 @@ import ContentMessenger from './components/ContentMessenger/ContentMessenger';
 
 function App(props) {
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className="App">
 
-        <Header />
+      <Header />
 
-        <div className="network">
-          <div className="container">
-            <div className="network__sections">
-              <Menu />
+      <div className="network">
+        <div className="container">
+          <div className="network__sections">
+            <Menu />
 
-              <div className="network__content">
-                <Route path="/profile" render={() => <ContentProfile
-                  state={props.state.profilePage}
-                  dispatch={props.dispatch} />}
-                />
+            <div className="network__content">
+              <Route path="/profile" render={() => <ContentProfile
+                state={props.state.profilePage}
+                dispatch={props.dispatch} />}
+              />
 
-                <Route path="/messenger" render={() => <ContentMessenger
-                  state={props.state.messengerPage} />}
-                />
-              </div>
+              <Route path="/messenger" render={() => <ContentMessenger
+                state={props.state.messengerPage} />}
+              />
             </div>
           </div>
         </div>
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 

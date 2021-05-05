@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -9,8 +10,11 @@ import App from './App';
 let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state}
-                dispatch={store.dispatch.bind(store)} />
+            <BrowserRouter>
+                <App
+                    state={state}
+                    dispatch={store.dispatch.bind(store)} />
+            </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
     );
