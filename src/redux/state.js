@@ -1,5 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+import profileReducer from './profile-reducer';
+import dialoguesReducer from './dialogues-reducer'
 
 const store = {
     _state: {
@@ -24,8 +24,6 @@ const store = {
     _callSubscriber() {
     },
 
-
-
     getState() {
         return this._state;
     },
@@ -33,41 +31,11 @@ const store = {
         this._callSubscriber = observer;
     },
 
-
-
-    _addPost() {
-        this._state.profilePage.numberOfPosts += 1;
-
-        let newPost = {
-            id: this._state.profilePage.numberOfPosts,
-            message: this._state.profilePage.newPostText
-        };
-
-        this._state.profilePage.postData.push(newPost);
-        this._state.profilePage.newPostText = ''
-        this._callSubscriber(this._state);
-    },
-    _updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-
-
-
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            this._addPost();
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._updateNewPostText(action.newText);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._callSubscriber(this._state);
     }
 }
-
-
-
-export const addPostActionCreator = () => ({ type: ADD_POST });
-export const updateNewPostTextActionCreator = (text) =>
-    ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
 export default store;
 window.state = store._state;
