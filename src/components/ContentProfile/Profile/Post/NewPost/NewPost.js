@@ -7,14 +7,16 @@ function NewPost(props) {
 
     let newPostElement = React.createRef();
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
+        // props.dispatch(addPostActionCreator());
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewPostText(text);
+        // let action = updateNewPostTextActionCreator(text);
+        // props.dispatch(action);
     }
 
     return (
@@ -37,7 +39,7 @@ function NewPost(props) {
                 <div className={PostCss.hr}></div>
 
                 <button
-                    onClick={addPost}
+                    onClick={onAddPost}
                     className={PostCss.submit}>
                     Опубликовать
                 </button>
