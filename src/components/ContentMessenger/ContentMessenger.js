@@ -4,7 +4,7 @@ import Dialogue from './Dialogue/Dialogue';
 
 function ContentMessenger(props) {
 
-    const dialoguesElements = props.state.dialoguesData
+    const dialoguesElements = props.state.messengerPage.dialoguesData
         .map(dialog => <Dialogue
             id={dialog.id}
             name={dialog.name}

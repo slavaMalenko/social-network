@@ -1,7 +1,6 @@
 import React from 'react';
 import PostCss from './NewPost.module.css'
 import profile from './../../ProfileInformation/Photo/img/profile__img.jpg'
-import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../../../redux/profile-reducer'
 
 function NewPost(props) {
 

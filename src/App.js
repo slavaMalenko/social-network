@@ -26,7 +26,7 @@ function App(props) {
               />
 
               <Route path="/messenger" render={() => <ContentMessenger
-                state={props.state.messengerPage} />}
+                state={props.state} />}
               />
             </div>
           </div>
