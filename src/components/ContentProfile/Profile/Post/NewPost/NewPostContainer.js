@@ -6,13 +6,10 @@ function NewPostContainer(props) {
     let state = props.store.getState();
 
     let addPost = () => {
-        // props.addPost();
         props.store.dispatch(addPostActionCreator());
     }
 
     let onPostChange = (text) => {
-        // let text = newPostElement.current.value;
-        // props.updateNewPostText(text);
         let action = updateNewPostTextActionCreator(text);
         props.store.dispatch(action);
     }

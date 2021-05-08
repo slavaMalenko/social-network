@@ -21,8 +21,8 @@ function App(props) {
             <div className="network__content">
               <Route path="/profile" render={() => <ContentProfile
                 store={props.store}
-                state={props.state.profilePage}
-                dispatch={props.dispatch} />}
+                state={props.state}
+              />}
               />
 
               <Route path="/messenger" render={() => <ContentMessenger
