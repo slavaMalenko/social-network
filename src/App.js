@@ -19,15 +19,9 @@ function App(props) {
             <Menu />
 
             <div className="network__content">
-              <Route path="/profile" render={() => <ContentProfile
-                store={props.store}
-                state={props.state}
-              />}
-              />
+              <Route path="/profile" render={() => <ContentProfile />} />
 
-              <Route path="/messenger" render={() => <ContentMessenger
-                state={props.state} />}
-              />
+              <Route path="/messenger" render={() => <ContentMessenger />} />
             </div>
           </div>
         </div>
