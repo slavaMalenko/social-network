@@ -1,18 +1,19 @@
 import React from 'react';
+import StoreContext from './../../../../../StoreContext';
 import MyPostsContainerCss from './MyPostsContainer.module.css'
-import Post from './Post/Post';
+import Posts from './Posts/Posts';
 
 function MyPostsContainer(props) {
-    debugger
-
-    const postsElements = props.state
-        .map(post => <Post
-            message={post.message}
-            id={post.id} />).reverse()
-
     return (
         <div className={MyPostsContainerCss.content}>
-            {postsElements}
+            <StoreContext.Consumer>
+                {(store) => {
+                    let state = store.getState();
+                    return (
+                        <Posts state={state} />
+                    )
+                }}
+            </StoreContext.Consumer>
         </div>
     );
 

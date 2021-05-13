@@ -3,7 +3,6 @@ import ContentProfileCss from './ContentProfile.module.css';
 import MyPostsContainer from './Profile/Post/MyPosts/MyPostsContainer';
 import NewPostContainer from './Profile/Post/NewPost/NewPostContainer';
 import ProfileInformation from './Profile/ProfileInformation/ProfileInformation';
-import StoreContext from './../../StoreContext';
 
 function ContentProfile(props) {
     return (
@@ -12,16 +11,7 @@ function ContentProfile(props) {
 
             <NewPostContainer />
 
-            <StoreContext.Consumer>
-                {(store) => {
-                    let state = store.getState();
-                    return (
-                        <MyPostsContainer
-                            state={state.profilePage.postData}
-                        />
-                    )
-                }}
-            </StoreContext.Consumer>
+            <MyPostsContainer />
         </div>
     );
 
