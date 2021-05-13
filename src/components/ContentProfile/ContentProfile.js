@@ -1,9 +1,9 @@
 import React from 'react';
 import ContentProfileCss from './ContentProfile.module.css';
-import MyPost from './Profile/Post/MyPost/MyPost';
+import MyPostsContainer from './Profile/Post/MyPosts/MyPostsContainer';
 import NewPostContainer from './Profile/Post/NewPost/NewPostContainer';
 import ProfileInformation from './Profile/ProfileInformation/ProfileInformation';
-import StoreContext from './../../StoreContext'
+import StoreContext from './../../StoreContext';
 
 function ContentProfile(props) {
     return (
@@ -15,11 +15,11 @@ function ContentProfile(props) {
             <StoreContext.Consumer>
                 {(store) => {
                     let state = store.getState();
-                    const postsElements = state.profilePage.postData
-                        .map(post => <MyPost
-                            message={post.message}
-                            id={post.id} />).reverse()
-                    return postsElements
+                    return (
+                        <MyPostsContainer
+                            state={state.profilePage.postData}
+                        />
+                    )
                 }}
             </StoreContext.Consumer>
         </div>
