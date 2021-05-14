@@ -4,7 +4,7 @@ import PostsCss from './Posts.module.css'
 import profile from './../../../ProfileInformation/Photo/img/profile__img.jpg'
 
 function Posts(props) {
-    const postsElements = props.state.profilePage.postData
+    const postsElements = props.state.postData
         .map(post => <Post
             message={post.message}
             id={post.id} />).reverse()
