@@ -3,12 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
 
 let initialState = {
-    usersData: [
-        // { id: 1, followed: true, name: "Эльвина Ряпова", status: "время весны", location: { country: "Russia", city: "Simferopol" } },
-        // { id: 2, followed: false, name: "Виктор Соляник", status: "does not exist", location: { country: "Russia", city: "Simferopol" } },
-        // { id: 3, followed: false, name: "Александр Нечаев", status: "", location: { country: "Russia", city: "Simferopol" } },
-        // { id: 4, followed: true, name: "Ахтем Маратов", status: "", location: { country: "Russia", city: "Simferopol" } },
-    ],
+    usersData: [],
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -47,8 +42,8 @@ const usersReducer = (state = initialState, action) => {
 }
 
 export const followActionCreator = (userId) => ({ type: FOLLOW, userId });
-export const unfollowActionCreator = () => ({ type: UNFOLLOW, userId });
-export const setUsersActionCreator = () => ({ type: SET_USERS, users });
+export const unfollowActionCreator = (userId) => ({ type: UNFOLLOW, userId });
+export const setUsersActionCreator = (users) => ({ type: SET_USERS, users });
 
 
 export default usersReducer;

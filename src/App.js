@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import ContentProfile from './components/ContentProfile/ContentProfile';
 import ContentMessenger from './components/ContentMessenger/ContentMessenger';
-import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 function App(props) {
@@ -24,7 +24,7 @@ function App(props) {
 
               <Route path="/messenger" render={() => <ContentMessenger />} />
 
-              <Route path="/users" render={() => <Users />} />
+              <Route path="/users" render={() => <UsersContainer />} />
             </div>
           </div>
         </div>

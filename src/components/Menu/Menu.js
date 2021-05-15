@@ -40,7 +40,7 @@ function Menu() {
                 </li>
 
                 <li className={menu.item}>
-                    <NavLink to="#" className={menu.NavLink}>
+                    <NavLink to="/users" className={menu.NavLink}>
                         <img className={menu['menu-img']} src={friends} alt="" />
                         Друзья
                     </NavLink>
