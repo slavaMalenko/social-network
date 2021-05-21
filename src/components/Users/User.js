@@ -1,12 +1,12 @@
 import React from 'react';
 import UsersCss from './Users.module.css';
-import usersVictor from './img/victor.jpg';
+import userPhoto from './img/camera.png';
 
 class User extends React.Component {
 
     constructor(props) {
         super(props);
-        this.photo = usersVictor;
+        this.photo = userPhoto;
     }
 
     render() {
