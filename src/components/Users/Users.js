@@ -11,13 +11,31 @@ class Users extends React.Component {
 
     componentDidMount() {
         axios
-            .get('https://social-network.samuraijs.com/api/1.0/users')
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items);
+                // this.props.setTotalUsersCount(response.data.totalCount);
+            })
+    }
+
+    onPageChanged = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber);
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items)
             })
     }
 
     render() {
+
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+        const pages = [];
+        for (let i = 1; i <= pagesCount; i++) {
+            pages.push(i);
+        }
+
         return (
             <div className={UsersCss.container} >
                 <div className={UsersCss.top}>
@@ -25,7 +43,7 @@ class Users extends React.Component {
                 </div>
 
                 {
-                    this.props.state.usersPage.usersData
+                    this.props.state
                         .map(user => <User
                             key={user.id}
                             id={user.id}
@@ -36,7 +54,18 @@ class Users extends React.Component {
                             unfollow={this.props.unfollow}
                         />)
                 }
-            </div>
+                <div>
+                    <ul className={UsersCss.numbers}>
+                        {
+                            pages.map(page => {
+                                return <li
+                                    className={this.props.currentPage === page ? UsersCss.item_active : UsersCss.item}
+                                    onClick={(e) => { this.onPageChanged(page) }}>{page}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+            </div >
         );
     }
 }

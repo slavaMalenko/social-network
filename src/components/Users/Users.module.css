@@ -121,3 +121,27 @@
     border: 0;
     border-radius: 3px;
 }
+
+.numbers {
+    display: flex;
+    justify-content: center;
+}
+
+.item_active {
+    font-size: 15px;
+    color: #2a5885;
+    font-weight: bold;
+
+    padding: 20px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid #2a5885;
+    background-color: rgba(245, 245, 245, 0.692);
+}
+
+.item {
+    color: #2a5885;
+    font-size: 15px;
+
+    padding: 20px 20px;
+    cursor: pointer;
+}
