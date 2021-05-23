@@ -4,6 +4,7 @@ import * as axios from 'axios';
 import UsersCss from './Users.module.css';
 import { followActionCreator, unfollowActionCreator, setUsersActionCreator, setCurrentPageActionCreator, setUsersTotalCountActionCreator, toggleIsFetchingActionCreator } from './../../redux/users-reducer';
 import User from './User';
+import Preloader from '../common/Preloader/Preloader';
 import userPhoto from './img/camera.png';
 
 
@@ -12,7 +13,6 @@ class UsersAPIComponent extends React.Component {
     constructor(props) {
         super(props);
         this.photo = userPhoto;
-        this.loader = <div className={UsersCss.ring}><div></div><div></div><div></div><div></div></div>;
     }
 
     componentDidMount() {
@@ -55,7 +55,7 @@ class UsersAPIComponent extends React.Component {
 
                     <div className={UsersCss.body}>
                         {this.props.isFetching
-                            ? this.loader
+                            ? <Preloader />
                             : this.props.state
                                 .map(user => <User
                                     key={user.id}
