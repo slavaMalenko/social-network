@@ -1,19 +1,17 @@
 import React from 'react';
 import UsersCss from './Users.module.css';
-import userPhoto from './img/camera.png';
 
 class User extends React.Component {
 
     constructor(props) {
         super(props);
-        this.photo = userPhoto;
     }
 
     render() {
         return (
             <div className={UsersCss.user}>
                 <div className={UsersCss.user_img}>
-                    <img src={this.photo} className={UsersCss.img} />
+                    <img src={this.props.photo} className={UsersCss.img} />
                 </div>
 
                 <div className={UsersCss.content}>

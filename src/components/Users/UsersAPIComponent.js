@@ -1,12 +1,14 @@
 import React from 'react';
-import UsersCss from './Users.module.css';
 import * as axios from 'axios';
+import UsersCss from './Users.module.css';
 import User from './User';
+import userPhoto from './img/camera.png';
 
-class Users extends React.Component {
+class UsersAPIComponent extends React.Component {
 
     constructor(props) {
         super(props);
+        this.photo = userPhoto;
     }
 
     componentDidMount() {
@@ -52,6 +54,7 @@ class Users extends React.Component {
                             status={user.status}
                             follow={this.props.follow}
                             unfollow={this.props.unfollow}
+                            photo={this.photo}
                         />)
                 }
                 <div>
@@ -70,4 +73,4 @@ class Users extends React.Component {
     }
 }
 
-export default Users;
+export default UsersAPIComponent;
