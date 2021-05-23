@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as axios from 'axios';
 import UsersCss from './Users.module.css';
-import { followActionCreator, unfollowActionCreator, setUsersActionCreator, setCurrentPageActionCreator, setUsersTotalCountActionCreator } from './../../redux/users-reducer';
+import { followActionCreator, unfollowActionCreator, setUsersActionCreator, setCurrentPageActionCreator, setUsersTotalCountActionCreator, toggleIsFetchingActionCreator } from './../../redux/users-reducer';
 import User from './User';
 import userPhoto from './img/camera.png';
 
@@ -12,12 +12,15 @@ class UsersAPIComponent extends React.Component {
     constructor(props) {
         super(props);
         this.photo = userPhoto;
+        this.loader = <div className={UsersCss.ring}><div></div><div></div><div></div><div></div></div>;
     }
 
     componentDidMount() {
+        this.props.toggleIsFetching(true);
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.toggleIsFetching(false);
                 this.props.setUsers(response.data.items);
                 // this.props.setTotalUsersCount(response.data.totalCount);
             })
@@ -25,9 +28,11 @@ class UsersAPIComponent extends React.Component {
 
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
+        this.props.toggleIsFetching(true);
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.toggleIsFetching(false);
                 this.props.setUsers(response.data.items)
             })
     }
@@ -42,25 +47,29 @@ class UsersAPIComponent extends React.Component {
         }
 
         return (
-            <div className={UsersCss.container} >
-                <div className={UsersCss.top}>
-                    <div className={UsersCss.all_users}>Все пользователи</div>
-                </div>
+            <>
+                <div className={UsersCss.container} >
+                    <div className={UsersCss.top}>
+                        <div className={UsersCss.all_users}>Все пользователи</div>
+                    </div>
 
-                {
-                    this.props.state
-                        .map(user => <User
-                            key={user.id}
-                            id={user.id}
-                            followed={user.followed}
-                            name={user.name}
-                            status={user.status}
-                            follow={this.props.follow}
-                            unfollow={this.props.unfollow}
-                            photo={this.photo}
-                        />)
-                }
-                <div>
+                    <div className={UsersCss.body}>
+                        {this.props.isFetching
+                            ? this.loader
+                            : this.props.state
+                                .map(user => <User
+                                    key={user.id}
+                                    id={user.id}
+                                    followed={user.followed}
+                                    name={user.name}
+                                    status={user.status}
+                                    follow={this.props.follow}
+                                    unfollow={this.props.unfollow}
+                                    photo={this.photo}
+                                />)
+                        }
+                    </div>
+
                     <ul className={UsersCss.numbers}>
                         {
                             pages.map(page => {
@@ -70,8 +79,8 @@ class UsersAPIComponent extends React.Component {
                             })
                         }
                     </ul>
-                </div>
-            </div >
+                </div >
+            </>
         );
     }
 }
@@ -82,6 +91,7 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
+        isFetching: state.usersPage.isFetching,
     }
 }
 
@@ -102,6 +112,9 @@ let mapDispatchToProps = (dispatch) => {
         setTotalUsersCount: (totalCount) => {
             dispatch(setUsersTotalCountActionCreator(totalCount))
         },
+        toggleIsFetching: (isFetching) => {
+            dispatch(toggleIsFetchingActionCreator(isFetching))
+        }
     }
 }
 
