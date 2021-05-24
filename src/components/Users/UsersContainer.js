@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as axios from 'axios';
 import UsersCss from './Users.module.css';
-import { followActionCreator, unfollowActionCreator, setUsersActionCreator, setCurrentPageActionCreator, setUsersTotalCountActionCreator, toggleIsFetchingActionCreator } from './../../redux/users-reducer';
+import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching } from './../../redux/users-reducer';
 import User from './User';
 import Preloader from '../common/Preloader/Preloader';
 import userPhoto from './img/camera.png';
@@ -73,9 +73,13 @@ class UsersAPIComponent extends React.Component {
                     <ul className={UsersCss.numbers}>
                         {
                             pages.map(page => {
-                                return <li
-                                    className={this.props.currentPage === page ? UsersCss.item_active : UsersCss.item}
-                                    onClick={(e) => { this.onPageChanged(page) }}>{page}</li>
+                                return (
+                                    <li
+                                        className={this.props.currentPage === page ? UsersCss.item_active : UsersCss.item}
+                                        onClick={(e) => { this.onPageChanged(page) }}>
+                                        {page}
+                                    </li>
+                                )
                             })
                         }
                     </ul>
@@ -95,28 +99,5 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followActionCreator(userId))
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowActionCreator(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersActionCreator(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageActionCreator(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setUsersTotalCountActionCreator(totalCount))
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetchingActionCreator(isFetching))
-        }
-    }
-}
-
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps, { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching })(UsersAPIComponent);
 export default UsersContainer;
