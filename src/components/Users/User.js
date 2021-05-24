@@ -1,16 +1,19 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import UsersCss from './Users.module.css';
 
 function User(props) {
     return (
         <div className={UsersCss.user}>
-            <div className={UsersCss.user_img}>
+            <NavLink to={'/profile/' + props.id} className={UsersCss.user_img}>
                 <img src={props.photo} className={UsersCss.img} />
-            </div>
+            </NavLink >
 
             <div className={UsersCss.content}>
                 <div className={UsersCss.information}>
-                    <p className={UsersCss.name}>{props.name}</p>
+                    <NavLink to={'/profile/' + props.id} className={UsersCss.name} >
+                        {props.name}
+                    </NavLink >
                     <p className={UsersCss.status}>{props.status}</p>
                     <p className={UsersCss.location}>{'props.country'}, {'props.city'}</p>
                 </div>

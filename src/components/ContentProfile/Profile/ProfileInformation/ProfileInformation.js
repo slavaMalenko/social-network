@@ -3,12 +3,12 @@ import Photo from './Photo/Photo';
 import Information from './Information/Information';
 import './ProfileInformation.css';
 
-function ProfileInformation() {
+function ProfileInformation(props) {
     return (
         <div className="profile">
-            <Photo />
+            <Photo profile={props.profile} />
 
-            <Information />
+            <Information profile={props.profile} />
         </div>
     );
 }

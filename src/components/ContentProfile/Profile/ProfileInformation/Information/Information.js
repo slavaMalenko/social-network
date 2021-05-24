@@ -1,11 +1,18 @@
 import React from 'react';
+import Preloader from '../../../../common/Preloader/Preloader';
 import profileInformation from './Information.module.css'
 
-function Information() {
+function Information(props) {
     return (
         <div className={profileInformation.information}>
             <h1 className={profileInformation['information-name']}>Slava Malenko</h1>
-            <p className={profileInformation['information-status']}>Английский я выучу только за то, что им разговаривал Леннон</p>
+            <p className={profileInformation['information-status']}>
+                {
+                    !props.profile
+                        ? <Preloader />
+                        : props.profile.lookingForAJobDescription
+                }
+            </p>
 
             <div className={profileInformation.hr}></div>
 

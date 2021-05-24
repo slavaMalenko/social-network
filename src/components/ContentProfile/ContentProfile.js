@@ -7,7 +7,7 @@ import ProfileInformation from './Profile/ProfileInformation/ProfileInformation'
 function ContentProfile(props) {
     return (
         <div className={ContentProfileCss.content}>
-            <ProfileInformation />
+            <ProfileInformation profile={props.profile} />
 
             <NewPostContainer />
 

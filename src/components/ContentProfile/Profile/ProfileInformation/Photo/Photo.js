@@ -1,13 +1,19 @@
 import React from 'react';
-import profilePhoto from './Photo.module.css';
-import profile from './img/profile__img.jpg'
+import Preloader from '../../../../common/Preloader/Preloader';
+import profilePhotoCss from './Photo.module.css';
+// import profile from './img/profile__img.jpg';
 
 
-function Photo() {
+function Photo(props) {
+
     return (
-        <div className={profilePhoto.Photo}>
-            <img src={profile} alt="" />
-            <a href="#">Редактировать</a>
+        <div className={profilePhotoCss.Photo}>
+            {
+                !props.profile
+                    ? <Preloader />
+                    : <img src={props.profile.photos.large} alt="" />
+            }
+            <a className={profilePhotoCss.edit} href="#">Редактировать</a>
         </div>
     );
 }
