@@ -3,9 +3,9 @@ import './cssApp/reset.css';
 import './cssApp/App.css';
 import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
-import ContentProfile from './components/ContentProfile/ContentProfile';
 import ContentMessenger from './components/ContentMessenger/ContentMessenger';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/ContentProfile/ProfileContainer';
 
 
 function App(props) {
@@ -20,7 +20,7 @@ function App(props) {
             <Menu />
 
             <div className="network__content">
-              <Route path="/profile" render={() => <ContentProfile />} />
+              <Route path="/profile" render={() => <ProfileContainer />} />
 
               <Route path="/messenger" render={() => <ContentMessenger />} />
 
