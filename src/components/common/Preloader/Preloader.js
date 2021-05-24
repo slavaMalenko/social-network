@@ -3,11 +3,13 @@ import PrelodaerCss from './Preloader.module.css'
 
 function Preloader() {
     return (
-        <div className={PrelodaerCss.ring}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div className={PrelodaerCss.container}>
+            <div className={PrelodaerCss.ellipsis}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     )
 }

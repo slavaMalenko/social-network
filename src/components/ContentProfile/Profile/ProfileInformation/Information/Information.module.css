@@ -9,7 +9,9 @@
 }
 
 .information-status {
+    position: relative;
     margin-bottom: 15px;
+    height: 13px;
 }
 
 .hr {
