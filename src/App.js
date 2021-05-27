@@ -20,7 +20,7 @@ function App(props) {
             <Menu />
 
             <div className="network__content">
-              <Route path="/profile" render={() => <ProfileContainer />} />
+              <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
 
               <Route path="/messenger" render={() => <ContentMessenger />} />
 
