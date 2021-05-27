@@ -1,4 +1,4 @@
-.Photo {
+.container {
     position: relative;
     width: 25%;
     height: 100%;
@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 
-.Photo img {
+.photo {
     width: 100%;
     height: 83%;
     object-fit: cover;
@@ -26,6 +26,6 @@
     border-radius: 5px;
 }
 
-.Photo a:hover {
+.container .edit:hover {
     color: rgb(110, 118, 145);
 }

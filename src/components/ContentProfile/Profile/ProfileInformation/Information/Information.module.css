@@ -1,14 +1,14 @@
-.information {
+.container {
     width: 73%;
     padding: 0 20px;
 }
 
-.information-name {
+.name {
     font-size: 25px;
     margin-bottom: 7px;
 }
 
-.information-status {
+.status {
     position: relative;
     margin-bottom: 15px;
     height: 13px;
@@ -26,11 +26,11 @@
     margin-bottom: 12px;
 }
 
-.item--bottom {
+.item-a--bottom {
     margin-bottom: 14px;
 }
 
-.item p {
+.item-data {
     width: 30%;
     color: rgb(117, 117, 117);
 }

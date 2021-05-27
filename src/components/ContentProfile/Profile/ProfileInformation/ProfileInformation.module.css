@@ -1,7 +1,6 @@
-.profile {
+.container {
     display: flex;
     justify-content: space-between;
     height: 320px;
-    /* align-items: center; */
     padding: 20px 20px;
 }

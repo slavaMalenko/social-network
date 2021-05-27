@@ -7,11 +7,13 @@ import photoProfile from './img/camera.png'
 
 function Photo(props) {
     return (
-        <div className={profilePhotoCss.Photo}>
+        <div className={profilePhotoCss.container}>
             {
                 !props.profile
                     ? <Preloader />
-                    : !props.profile.photos.large ? <img src={photoProfile} alt="" /> : <img src={props.profile.photos.large} alt="" />
+                    : !props.profile.photos.large
+                        ? <img className={profilePhotoCss.photo} src={photoProfile} alt="" />
+                        : <img className={profilePhotoCss.photo} src={props.profile.photos.large} alt="" />
 
             }
             <a className={profilePhotoCss.edit} href="#">Редактировать</a>

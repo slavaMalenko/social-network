@@ -1,79 +1,10 @@
 .container {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.top {
-    width: 100%;
-    height: 60px;
-    background-color: rgba(226, 227, 228, 0.432);
-    padding: 0 0 0 40px;
-    margin-bottom: 5px;
-}
-
-.all_users {
-    width: 150px;
-    font-size: 16px;
-    color: #2a5885;
-    font-weight: 500;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #2a5885;
-    height: 100%;
-    cursor: pointer;
-}
-
-.body {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: auto 0 0 0;
-}
-
-.numbers {
-    display: flex;
-    justify-content: center;
-}
-
-.item_active {
-    font-size: 15px;
-    color: #2a5885;
-    font-weight: bold;
-
-    padding: 20px 20px;
-    cursor: pointer;
-    border-bottom: 2px solid #2a5885;
-    background-color: rgba(245, 245, 245, 0.692);
-}
-
-.item {
-    color: #2a5885;
-    font-size: 15px;
-
-    padding: 20px 20px;
-    cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
-.user {
-    width: 100%;
     height: 148px;
     display: flex;
 }
 
-.user_img {
+.link {
     width: 20%;
     height: 100%;
     display: flex;
@@ -81,14 +12,14 @@
     align-items: center;
 }
 
-.img {
+.link-img {
     width: 110px;
     height: 110px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.content {
+.component {
     width: 70%;
     display: flex;
     border-bottom: #bad0e9 1px solid;
@@ -98,7 +29,7 @@
     width: 80%;
 }
 
-.name {
+.information-name {
     display: inline-block;
     text-decoration: none;
     font-size: 16px;
@@ -108,35 +39,35 @@
     margin-top: 20px;
 }
 
-.name:hover {
+.information-name:hover {
     text-decoration: underline;
 }
 
-.status {
+.information-status {
     margin-top: 5px;
 }
 
-.location {
+.information-location {
     margin-top: 20px;
     color: #2a5885;
     cursor: pointer;
 }
 
-.location:hover {
+.information-location:hover {
     text-decoration: underline;
 }
 
 
 
 
-.button_cont {
+.button {
     width: 30%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.button_off {
+.button-off {
     width: 150px;
     padding: 10px 0;
     background-color: #5181b8;
@@ -146,11 +77,11 @@
     border-radius: 5px;
 }
 
-.button_off:hover {
+.button-off:hover {
     background-color: #5b93d3;
 }
 
-.button_on {
+.button-on {
     width: 150px;
     padding: 10px 0;
     background-color: #ebf0f5ab;

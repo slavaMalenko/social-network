@@ -16,67 +16,67 @@ import advertising from './img/advertising.png';
 
 function Menu() {
     return (
-        <div className={menu.menu}>
+        <div className={menu.container}>
             <ul>
                 <li className={menu.item}>
                     <NavLink to="/profile" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={profile} alt="" />
+                        <img className={menu['item-img']} src={profile} alt="" />
                         Моя страница
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={news} alt="" />
+                        <img className={menu['item-img']} src={news} alt="" />
                         Новости
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="/messenger" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={messages} alt="" />
+                        <img className={menu['item-img']} src={messages} alt="" />
                         Мессенджер
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="/users" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={friends} alt="" />
+                        <img className={menu['item-img']} src={friends} alt="" />
                         Друзья
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={community} alt="" />
+                        <img className={menu['item-img']} src={community} alt="" />
                         Сообщества
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={photos} alt="" />
+                        <img className={menu['item-img']} src={photos} alt="" />
                         Фотографии
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={music} alt="" />
+                        <img className={menu['item-img']} src={music} alt="" />
                         Музыка
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={videos} alt="" />
+                        <img className={menu['item-img']} src={videos} alt="" />
                         Видео
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={games} alt="" />
+                        <img className={menu['item-img']} src={games} alt="" />
                         Игры
                     </NavLink>
                 </li>
@@ -85,21 +85,21 @@ function Menu() {
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={bookmarks} alt="" />
+                        <img className={menu['item-img']} src={bookmarks} alt="" />
                         Закладки
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={files} alt="" />
+                        <img className={menu['item-img']} src={files} alt="" />
                         Файлы
                     </NavLink>
                 </li>
 
                 <li className={menu.item}>
                     <NavLink to="#" className={menu.NavLink}>
-                        <img className={menu['menu-img']} src={advertising} alt="" />
+                        <img className={menu['item-img']} src={advertising} alt="" />
                         Реклама
                     </NavLink>
                 </li>

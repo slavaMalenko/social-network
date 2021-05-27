@@ -1,4 +1,4 @@
-.menu {
+.container {
     height: 92vh;
     width: 20%;
     padding: 0 10px 0 10px;
@@ -22,7 +22,7 @@
     background-color: rgba(225, 227, 231, 0.877);
 }
 
-.item:hover .menu-img {
+.item:hover .item-img {
     transform: scale(1.1);
     margin-right: 15px;
 }
@@ -37,7 +37,7 @@
     outline: none !important;
 }
 
-.menu-img {
+.item-img {
     margin-right: 12px;
     width: 30px;
 

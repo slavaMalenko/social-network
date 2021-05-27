@@ -4,9 +4,9 @@ import profileInformation from './Information.module.css'
 
 function Information(props) {
     return (
-        <div className={profileInformation.information}>
-            <h1 className={profileInformation['information-name']}>Slava Malenko</h1>
-            <p className={profileInformation['information-status']}>
+        <div className={profileInformation.container}>
+            <h1 className={profileInformation.name}>Slava Malenko</h1>
+            <p className={profileInformation.status}>
                 {
                     !props.profile
                         ? <Preloader />
@@ -17,37 +17,37 @@ function Information(props) {
             <div className={profileInformation.hr}></div>
 
             <div className={profileInformation.item}>
-                <p>Дата рождения:</p>
+                <p className={profileInformation['item-data']}>Дата рождения:</p>
                 <a className={profileInformation['item-a']} href="#">26 февраля 2000</a>
             </div>
 
             <div className={profileInformation.item}>
-                <p>Город:</p>
+                <p className={profileInformation['item-data']}>Город:</p>
                 <a className={profileInformation['item-a']} href="#">Симферополь</a>
             </div>
 
             <div className={profileInformation.item}>
-                <p>Языки:</p>
+                <p className={profileInformation['item-data']}>Языки:</p>
                 <a className={profileInformation['item-a']} href="#">Русский, Английский</a>
             </div>
 
             <div className={profileInformation.item}>
-                <p>Моб. телефон:</p>
-                <a className={`${profileInformation['item-a']} ${profileInformation['item--bottom']}`} href="#">на прослушке</a>
+                <p className={profileInformation['item-data']}>Моб. телефон:</p>
+                <a className={`${profileInformation['item-a']} ${profileInformation['item-a--bottom']}`} href="#">на прослушке</a>
             </div>
 
             <div className={profileInformation.item}>
-                <p>Место учёбы:</p>
+                <p className={profileInformation['item-data']}>Место учёбы:</p>
                 <a className={profileInformation['item-a']} href="#">КФУ им. В. И. Вернадского</a>
             </div>
 
             <div className={profileInformation.item}>
-                <p>Факультет:</p>
+                <p className={profileInformation['item-data']}>Факультет:</p>
                 <a className={profileInformation['item-a']} href="#">Институт экономики и управления</a>
             </div>
 
             <div className={profileInformation.item}>
-                <p>Специальность:</p>
+                <p className={profileInformation['item-data']}>Специальность:</p>
                 <a className={profileInformation['item-a']} href="#">Бизнес-информатица и математическое моделирование</a>
             </div>
         </div>

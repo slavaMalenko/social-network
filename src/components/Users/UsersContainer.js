@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as axios from 'axios';
-import UsersCss from './Users.module.css';
+import UsersContainerCss from './UsersContainer.module.css';
 import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching } from './../../redux/users-reducer';
 import User from './User';
 import Preloader from '../common/Preloader/Preloader';
@@ -48,12 +48,12 @@ class UsersAPIComponent extends React.Component {
 
         return (
             <>
-                <div className={UsersCss.container} >
-                    <div className={UsersCss.top}>
-                        <div className={UsersCss.all_users}>Все пользователи</div>
+                <div className={UsersContainerCss.content} >
+                    <div className={UsersContainerCss.header}>
+                        <div className={UsersContainerCss['all-users']}>Все пользователи</div>
                     </div>
 
-                    <div className={UsersCss.body}>
+                    <div className={UsersContainerCss.body}>
                         {this.props.isFetching
                             ? <Preloader />
                             : this.props.state
@@ -70,12 +70,12 @@ class UsersAPIComponent extends React.Component {
                         }
                     </div>
 
-                    <ul className={UsersCss.numbers}>
+                    <ul className={UsersContainerCss.numbers}>
                         {
                             pages.map(page => {
                                 return (
                                     <li
-                                        className={this.props.currentPage === page ? UsersCss.item_active : UsersCss.item}
+                                        className={this.props.currentPage === page ? UsersContainerCss['number-active'] : UsersContainerCss.number}
                                         onClick={(e) => { this.onPageChanged(page) }}>
                                         {page}
                                     </li>

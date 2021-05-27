@@ -32,12 +32,12 @@ function Dialogue(props) {
     else photo = profileAhtem
 
     return (
-        <NavLink to={path} className={DialoguesCss.content}>
-            <img className={DialoguesCss.img} src={photo} />
+        <NavLink to={path} className={DialoguesCss.item}>
+            <img className={DialoguesCss['item-img']} src={photo} />
 
             <div className={DialoguesCss.messages}>
-                <p className={DialoguesCss.name}>{props.name}</p>
-                <p className={DialoguesCss.message}>{props.message}</p>
+                <p className={DialoguesCss['messages-name']}>{props.name}</p>
+                <p className={DialoguesCss['messages-message']}>{props.message}</p>
             </div>
         </NavLink>
     );

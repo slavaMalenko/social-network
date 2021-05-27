@@ -1,9 +1,4 @@
-.content {
-    width: 100%;
-    height: 100%;
-}
-
-.content {
+.item {
     width: 100%;
     height: 70px;
     padding: 10px;
@@ -18,11 +13,11 @@
     outline: none !important;
 }
 
-.content:hover {
+.item:hover {
     background-color: rgba(245, 245, 245, 0.692);
 }
 
-.img {
+.item-img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -34,7 +29,7 @@
     padding: 3px 15px;
 }
 
-.name {
+.messages-name {
     color: rgb(1, 80, 133);
     margin-bottom: 10px;
 }

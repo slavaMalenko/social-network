@@ -10,13 +10,13 @@ import ProfileContainer from './components/ContentProfile/ProfileContainer';
 
 function App(props) {
   return (
-    <div className="App">
+    <div className="app">
 
       <Header />
 
       <div className="network">
         <div className="container">
-          <div className="network__sections">
+          <div className="network__container">
             <Menu />
 
             <div className="network__content">

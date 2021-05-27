@@ -8,7 +8,10 @@
     max-width: 1160px;
 }
 
-.App {
+
+
+
+.app {
     background-color: rgba(229, 232, 232, 0.822);
     font-family: 'Roboto', sans-serif;
     font-size: 13px;
@@ -25,7 +28,7 @@
     padding-top: 2vh;
 }
 
-.network__sections {
+.network__container {
     display: flex;
 }
 
