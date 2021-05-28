@@ -4,8 +4,10 @@
 }
 
 .name {
+    position: relative;
     font-size: 25px;
     margin-bottom: 7px;
+    height: 25px;
 }
 
 .status {

@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderCss from './Header.module.css';
 import vk from './img/vk.jpg';
 import arrow from './img/arrow.png'
+import { NavLink } from 'react-router-dom';
 
 function Header() {
     return (
@@ -9,10 +10,10 @@ function Header() {
             <div className="container">
                 <div className={HeaderCss.content}>
                     <a href="#"><img className={HeaderCss.img} src={vk} alt="" /></a>
-                    <a href="#" className={HeaderCss.exit}>
-                        Выйти
+                    <NavLink to={'/login'} className={HeaderCss.exit}>
+                        Войти
                         <img src={arrow} />
-                    </a>
+                    </NavLink>
                 </div>
             </div>
         </header>

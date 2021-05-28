@@ -5,12 +5,18 @@ import profileInformation from './Information.module.css'
 function Information(props) {
     return (
         <div className={profileInformation.container}>
-            <h1 className={profileInformation.name}>Slava Malenko</h1>
+            <h1 className={profileInformation.name}>
+                {
+                    !props.profile
+                        ? <Preloader />
+                        : props.profile.fullName
+                }
+            </h1>
             <p className={profileInformation.status}>
                 {
                     !props.profile
                         ? <Preloader />
-                        : props.profile.lookingForAJobDescription
+                        : props.profile.aboutMe
                 }
             </p>
 
