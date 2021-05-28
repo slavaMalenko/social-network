@@ -9,7 +9,9 @@
 }
 
 
-
+.header {
+    background-color: #fff;
+}
 
 .app {
     background-color: rgba(229, 232, 232, 0.822);

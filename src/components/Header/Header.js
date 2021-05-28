@@ -4,16 +4,20 @@ import vk from './img/vk.jpg';
 import arrow from './img/arrow.png'
 import { NavLink } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
+
     return (
         <header>
-            <div className="container">
+            <div>
                 <div className={HeaderCss.content}>
                     <a href="#"><img className={HeaderCss.img} src={vk} alt="" /></a>
-                    <NavLink to={'/login'} className={HeaderCss.exit}>
-                        Войти
-                        <img src={arrow} />
-                    </NavLink>
+                    <div className={HeaderCss.state}>
+                        {
+                            props.isAuth
+                                ? <div className={HeaderCss.login}>{props.login}</div>
+                                : <NavLink to={'/login'} className={HeaderCss.exit}>Войти <img src={arrow} /></NavLink>
+                        }
+                    </div>
                 </div>
             </div>
         </header>
