@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import * as axios from 'axios';
 import UserCss from './User.module.css';
 
 function User(props) {
@@ -21,8 +22,41 @@ function User(props) {
                 <div className={UserCss.button}>
                     {
                         props.followed
-                            ? <button className={UserCss['button-on']} onClick={() => { props.unfollow(props.id) }} >Удалить из друзей</button>
-                            : <button className={UserCss['button-off']} onClick={() => { props.follow(props.id) }} >Добавить в друзья</button>
+                            ? <button
+                                className={UserCss['button-on']}
+                                onClick={() => {
+                                    axios
+                                        .delete(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, {
+                                            withCredentials: true,
+                                            headers: {
+                                                'API-KEY': 'eb48bb2e-6a65-44b0-b33e-bc9cd2c3f9d8'
+                                            }
+                                        })
+                                        .then(response => {
+                                            if (response.data.resultCode === 0) {
+                                                props.unfollow(props.id)
+                                            }
+                                        })
+                                }} >
+                                Удалить из друзей</button>
+
+                            : <button
+                                className={UserCss['button-off']}
+                                onClick={() => {
+                                    axios
+                                        .post(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, {}, {
+                                            withCredentials: true,
+                                            headers: {
+                                                'API-KEY': 'eb48bb2e-6a65-44b0-b33e-bc9cd2c3f9d8'
+                                            }
+                                        })
+                                        .then(response => {
+                                            if (response.data.resultCode === 0) {
+                                                props.follow(props.id)
+                                            }
+                                        })
+                                }} >
+                                Добавить в друзья</button>
                     }
                 </div>
             </div>
