@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import UsersContainerCss from './UsersContainer.module.css';
 import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching } from './../../redux/users-reducer';
-import { getUsers } from '../../api/api';
+import { usersApi } from '../../api/api';
 import User from './User';
 import Preloader from '../common/Preloader/Preloader';
 import userPhoto from './img/camera.png';
@@ -18,7 +18,7 @@ class UsersAPIComponent extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true);
 
-        getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+        usersApi.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
             this.props.setUsers(data.items);
             // this.props.setTotalUsersCount(response.totalCount);
@@ -28,7 +28,7 @@ class UsersAPIComponent extends React.Component {
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true);
-        getUsers(pageNumber, this.props.pageSize).then(data => {
+        usersApi.getUsers(pageNumber, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
             this.props.setUsers(data.items)
         })

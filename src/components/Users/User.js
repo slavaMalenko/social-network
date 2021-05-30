@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { getUnfollow, getFollow } from '../../api/api';
+import { followApi } from '../../api/api';
 import UserCss from './User.module.css';
 
 function User(props) {
@@ -25,7 +25,7 @@ function User(props) {
                             ? <button
                                 className={UserCss['button-on']}
                                 onClick={() => {
-                                    getUnfollow(props.id)
+                                    followApi.getUnfollow(props.id)
                                         .then(data => {
                                             if (data.resultCode === 0) {
                                                 props.unfollow(props.id)
@@ -37,7 +37,7 @@ function User(props) {
                             : <button
                                 className={UserCss['button-off']}
                                 onClick={() => {
-                                    getFollow(props.id)
+                                    followApi.getFollow(props.id)
                                         .then(data => {
                                             if (data.resultCode === 0) {
                                                 props.follow(props.id)
