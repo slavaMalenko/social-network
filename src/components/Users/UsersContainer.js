@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import UsersContainerCss from './UsersContainer.module.css';
 import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching } from './../../redux/users-reducer';
+import { getUsers } from '../../api/api';
 import User from './User';
 import Preloader from '../common/Preloader/Preloader';
 import userPhoto from './img/camera.png';
-import { getUsers } from '../../api/api';
 
 
 class UsersAPIComponent extends React.Component {

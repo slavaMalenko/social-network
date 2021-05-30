@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import * as axios from 'axios';
-import UserCss from './User.module.css';
 import { getUnfollow, getFollow } from '../../api/api';
+import UserCss from './User.module.css';
 
 function User(props) {
     return (
