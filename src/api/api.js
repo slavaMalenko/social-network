@@ -10,3 +10,11 @@ export const getUsers = (currentPage = 1, pageSize = 5) => {
             })
         .then(response => response.data)
 }
+
+export const getMe = () => {
+    return axios
+        .get(baseUrl + `/auth/me`, {
+            withCredentials: true,
+        })
+        .then(response => response.data)
+}
