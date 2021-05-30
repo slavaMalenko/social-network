@@ -1,20 +1,21 @@
 import * as axios from 'axios';
 
-const baseUrl = 'https://social-network.samuraijs.com/api/1.0'
+const instance = axios.create({
+    withCredentials: true,
+    baseURL: 'https://social-network.samuraijs.com/api/1.0/',
+    headers: {
+        'API-KEY': 'eb48bb2e-6a65-44b0-b33e-bc9cd2c3f9d8'
+    }
+})
 
 export const getUsers = (currentPage = 1, pageSize = 5) => {
-    return axios
-        .get(baseUrl + `/users?page=${currentPage}&count=${pageSize}`,
-            {
-                withCredentials: true,
-            })
+    return instance
+        .get(`users?page=${currentPage}&count=${pageSize}`)
         .then(response => response.data)
 }
 
 export const getMe = () => {
-    return axios
-        .get(baseUrl + `/auth/me`, {
-            withCredentials: true,
-        })
+    return instance
+        .get(`auth/me`)
         .then(response => response.data)
 }
