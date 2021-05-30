@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import './cssApp/reset.css';
 import './cssApp/App.css';
 import Menu from './components/Menu/Menu';
@@ -23,11 +23,13 @@ function App(props) {
             <Menu />
 
             <div className="network__content">
-              <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
+              <Switch>
+                <Route exact path="/profile/:userId?" render={() => <ProfileContainer />} />
 
-              <Route path="/messenger" render={() => <ContentMessenger />} />
+                <Route path="/messenger" render={() => <ContentMessenger />} />
 
-              <Route path="/users" render={() => <UsersContainer />} />
+                <Route path="/users" render={() => <UsersContainer />} />
+              </Switch>
             </div>
           </div>
         </div>
