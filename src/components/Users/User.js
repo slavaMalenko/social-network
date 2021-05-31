@@ -23,31 +23,31 @@ function User(props) {
                     {
                         props.followed
                             ? <button
-                                disabled={props.followingInProgress}
+                                disabled={props.followingInProgress.some(id => id === props.id)}
                                 className={UserCss['button-on']}
                                 onClick={() => {
-                                    props.toggleFollowingInProgress(true);
+                                    props.toggleFollowingInProgress(true, props.id);
                                     followApi.getUnfollow(props.id)
                                         .then(data => {
                                             if (data.resultCode === 0) {
                                                 props.unfollow(props.id)
                                             }
-                                            props.toggleFollowingInProgress(false);
+                                            props.toggleFollowingInProgress(false, props.id);
                                         })
                                 }} >
                                 Удалить из друзей</button>
 
                             : <button
-                                disabled={props.followingInProgress}
+                                disabled={props.followingInProgress.some(id => id === props.id)}
                                 className={UserCss['button-off']}
                                 onClick={() => {
-                                    props.toggleFollowingInProgress(true);
+                                    props.toggleFollowingInProgress(true, props.id);
                                     followApi.getFollow(props.id)
                                         .then(data => {
                                             if (data.resultCode === 0) {
                                                 props.follow(props.id)
                                             }
-                                            props.toggleFollowingInProgress(false);
+                                            props.toggleFollowingInProgress(false, props.id);
                                         })
                                 }} >
                                 Добавить в друзья</button>
