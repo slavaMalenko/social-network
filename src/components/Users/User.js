@@ -23,25 +23,31 @@ function User(props) {
                     {
                         props.followed
                             ? <button
+                                disabled={props.followingInProgress}
                                 className={UserCss['button-on']}
                                 onClick={() => {
+                                    props.toggleFollowingInProgress(true);
                                     followApi.getUnfollow(props.id)
                                         .then(data => {
                                             if (data.resultCode === 0) {
                                                 props.unfollow(props.id)
                                             }
+                                            props.toggleFollowingInProgress(false);
                                         })
                                 }} >
                                 Удалить из друзей</button>
 
                             : <button
+                                disabled={props.followingInProgress}
                                 className={UserCss['button-off']}
                                 onClick={() => {
+                                    props.toggleFollowingInProgress(true);
                                     followApi.getFollow(props.id)
                                         .then(data => {
                                             if (data.resultCode === 0) {
                                                 props.follow(props.id)
                                             }
+                                            props.toggleFollowingInProgress(false);
                                         })
                                 }} >
                                 Добавить в друзья</button>
