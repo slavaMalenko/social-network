@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UsersContainerCss from './UsersContainer.module.css';
-import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching, toggleFollowingInProgress } from './../../redux/users-reducer';
-import { usersApi } from '../../api/api';
+import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching, toggleFollowingInProgress, getUsers } from './../../redux/users-reducer';
 import User from './User';
 import Preloader from '../common/Preloader/Preloader';
 import userPhoto from './img/camera.png';
@@ -16,22 +15,12 @@ class UsersAPIComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.props.toggleIsFetching(true);
-
-        usersApi.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items);
-            // this.props.setTotalUsersCount(response.totalCount);
-        })
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
 
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
-        this.props.toggleIsFetching(true);
-        usersApi.getUsers(pageNumber, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items)
-        })
+        this.props.getUsers(pageNumber, this.props.pageSize);
     }
 
     render() {
@@ -99,5 +88,10 @@ let mapStateToProps = (state) => {
     }
 }
 
-const UsersContainer = connect(mapStateToProps, { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsFetching, toggleFollowingInProgress })(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps,
+    {
+        follow, unfollow,
+        setCurrentPage, setUsersTotalCount,
+        toggleFollowingInProgress, getUsers
+    })(UsersAPIComponent);
 export default UsersContainer;
