@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { followApi } from '../../api/api';
 import UserCss from './User.module.css';
 
 function User(props) {
@@ -25,31 +24,13 @@ function User(props) {
                             ? <button
                                 disabled={props.followingInProgress.some(id => id === props.id)}
                                 className={UserCss['button-on']}
-                                onClick={() => {
-                                    props.toggleFollowingInProgress(true, props.id);
-                                    followApi.getUnfollow(props.id)
-                                        .then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.unfollow(props.id)
-                                            }
-                                            props.toggleFollowingInProgress(false, props.id);
-                                        })
-                                }} >
+                                onClick={() => { props.unfollowSuccess(props.id) }} >
                                 Удалить из друзей</button>
 
                             : <button
                                 disabled={props.followingInProgress.some(id => id === props.id)}
                                 className={UserCss['button-off']}
-                                onClick={() => {
-                                    props.toggleFollowingInProgress(true, props.id);
-                                    followApi.getFollow(props.id)
-                                        .then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.follow(props.id)
-                                            }
-                                            props.toggleFollowingInProgress(false, props.id);
-                                        })
-                                }} >
+                                onClick={() => { props.followSuccess(props.id) }} >
                                 Добавить в друзья</button>
                     }
                 </div>
