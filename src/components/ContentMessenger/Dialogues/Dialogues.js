@@ -8,7 +8,7 @@ import profileVictor from './img/victor.jpg';
 
 
 function Dialogues(props) {
-    const dialoguesElements = props.state.messengerPage.dialoguesData
+    const dialoguesElements = props.dialoguesData
         .map(dialog => <Dialogue
             id={dialog.id}
             name={dialog.name}

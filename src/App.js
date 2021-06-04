@@ -2,10 +2,10 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import './cssApp/reset.css';
 import './cssApp/App.css';
 import Menu from './components/Menu/Menu';
-import ContentMessenger from './components/ContentMessenger/ContentMessenger';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/ContentProfile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import ContentMessengerContainer from './components/ContentMessenger/ContentMessengerContainer';
 
 
 function App(props) {
@@ -26,7 +26,7 @@ function App(props) {
               <Switch>
                 <Route exact path="/profile/:userId?" render={() => <ProfileContainer />} />
 
-                <Route path="/messenger" render={() => <ContentMessenger />} />
+                <Route path="/messenger" render={() => <ContentMessengerContainer />} />
 
                 <Route path="/users" render={() => <UsersContainer />} />
               </Switch>

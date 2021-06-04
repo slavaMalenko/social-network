@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentMessengerCss from './ContentMessenger.module.css'
-import DialoguesContainer from './DialoguesContainer/DialoguesContainer';
+import Dialogues from './Dialogues/Dialogues';
 
 function ContentMessenger(props) {
     return (
@@ -8,7 +8,7 @@ function ContentMessenger(props) {
             <div className={ContentMessengerCss.dialogues}>
                 <div className={ContentMessengerCss.bottom}></div>
 
-                <DialoguesContainer />
+                <Dialogues dialoguesData={props.state.dialoguesData} />
             </div>
 
             <div className={ContentMessengerCss.messages}></div>
