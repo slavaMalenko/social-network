@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { getProfileInformation } from './../../redux/profile-reducer';
+import { getProfileInformation, addPost, updateNewPostText } from './../../redux/profile-reducer';
 import ContentProfile from './ContentProfile';
 
 class ProfileAPIComponent extends React.Component {
@@ -37,6 +37,6 @@ let mapStateToProps = (state) => {
 
 let withUrlDataContainerComponent = withRouter(ProfileAPIComponent);
 
-const ProfileContainer = connect(mapStateToProps, { getProfileInformation })(withUrlDataContainerComponent)
+const ProfileContainer = connect(mapStateToProps, { getProfileInformation, addPost, updateNewPostText })(withUrlDataContainerComponent)
 
 export default ProfileContainer;
