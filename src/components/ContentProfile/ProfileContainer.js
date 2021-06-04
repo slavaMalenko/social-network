@@ -28,6 +28,9 @@ class ProfileAPIComponent extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
+        postData: state.profilePage.postData,
+        newPostText: state.profilePage.newPostText,
+        numberOfPosts: state.profilePage.numberOfPosts,
         profile: state.profilePage.profile,
     }
 }
