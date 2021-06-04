@@ -6,6 +6,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/ContentProfile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import ContentMessengerContainer from './components/ContentMessenger/ContentMessengerContainer';
+import Login from './components/Login/Login';
 
 
 function App(props) {
@@ -29,6 +30,8 @@ function App(props) {
                 <Route path="/messenger" render={() => <ContentMessengerContainer />} />
 
                 <Route path="/users" render={() => <UsersContainer />} />
+
+                <Route path="/login" render={() => <Login />} />
               </Switch>
             </div>
           </div>
