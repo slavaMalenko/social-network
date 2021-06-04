@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { Redirect, withRouter } from 'react-router-dom';
 import { getProfileInformation, addPost, updateNewPostText } from './../../redux/profile-reducer';
 import ContentProfile from './ContentProfile';
 
@@ -19,6 +19,8 @@ class ProfileAPIComponent extends React.Component {
     }
 
     render() {
+        if (!this.props.isAuth) return <Redirect to='./login' />
+
         return (
             <ContentProfile {...this.props} profile={this.props.profile} />
         )
@@ -32,6 +34,7 @@ let mapStateToProps = (state) => {
         newPostText: state.profilePage.newPostText,
         numberOfPosts: state.profilePage.numberOfPosts,
         profile: state.profilePage.profile,
+        isAuth: state.auth.isAuth,
     }
 }
 
