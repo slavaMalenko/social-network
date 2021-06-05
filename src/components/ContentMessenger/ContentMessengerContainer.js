@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import ContentMessenger from './ContentMessenger';
+
+let authRedirectComponent = withAuthRedirect(ContentMessenger);
 
 let mapStateToProps = (state) => {
     return {
@@ -8,6 +11,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-const ContentMessengerContainer = connect(mapStateToProps)(ContentMessenger);
+const ContentMessengerContainer = connect(mapStateToProps)(authRedirectComponent);
 
 export default ContentMessengerContainer;

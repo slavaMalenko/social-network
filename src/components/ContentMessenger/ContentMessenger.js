@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import ContentMessengerCss from './ContentMessenger.module.css'
+import ContentMessengerCss from './ContentMessenger.module.css';
 import Dialogues from './Dialogues/Dialogues';
 
 function ContentMessenger(props) {

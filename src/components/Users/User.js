@@ -15,7 +15,7 @@ function User(props) {
                         {props.name}
                     </NavLink >
                     <p className={UserCss['information-status']}>{props.status}</p>
-                    <p className={UserCss['information-location']}>{'props.country'}, {'props.city'}</p>
+                    <p className={UserCss['information-location']}>Россия, Симферополь</p>
                 </div>
 
                 <div className={UserCss.button}>

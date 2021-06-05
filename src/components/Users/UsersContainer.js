@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import UsersContainerCss from './UsersContainer.module.css';
 import { followSuccess, unfollowSuccess, setCurrentPage, getUsers } from './../../redux/users-reducer';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import User from './User';
 import Preloader from '../common/Preloader/Preloader';
 import userPhoto from './img/camera.png';
-import { Redirect } from 'react-router-dom';
 
 
 class UsersAPIComponent extends React.Component {
@@ -32,8 +32,6 @@ class UsersAPIComponent extends React.Component {
         for (let i = 1; i <= pagesCount; i++) {
             pages.push(i);
         }
-
-        if (!this.props.isAuth) return <Redirect to='./login' />
 
         return (
             <>
@@ -79,6 +77,10 @@ class UsersAPIComponent extends React.Component {
     }
 }
 
+
+let authRedirectComponent = withAuthRedirect(UsersAPIComponent);
+
+
 let mapStateToProps = (state) => {
     return {
         state: state.usersPage.usersData,
@@ -87,12 +89,8 @@ let mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
         followingInProgress: state.usersPage.followingInProgress,
-        isAuth: state.auth.isAuth,
     }
 }
 
-const UsersContainer = connect(mapStateToProps,
-    {
-        followSuccess, unfollowSuccess, setCurrentPage, getUsers
-    })(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps, { followSuccess, unfollowSuccess, setCurrentPage, getUsers })(authRedirectComponent);
 export default UsersContainer;
