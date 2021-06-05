@@ -6,6 +6,7 @@ import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import User from './User';
 import Preloader from '../common/Preloader/Preloader';
 import userPhoto from './img/camera.png';
+import { compose } from 'redux';
 
 
 class UsersAPIComponent extends React.Component {
@@ -77,10 +78,6 @@ class UsersAPIComponent extends React.Component {
     }
 }
 
-
-let authRedirectComponent = withAuthRedirect(UsersAPIComponent);
-
-
 let mapStateToProps = (state) => {
     return {
         state: state.usersPage.usersData,
@@ -92,5 +89,9 @@ let mapStateToProps = (state) => {
     }
 }
 
-const UsersContainer = connect(mapStateToProps, { followSuccess, unfollowSuccess, setCurrentPage, getUsers })(authRedirectComponent);
+const UsersContainer = compose(
+    connect(mapStateToProps, { followSuccess, unfollowSuccess, setCurrentPage, getUsers }),
+    withAuthRedirect
+)(UsersAPIComponent)
+
 export default UsersContainer;
